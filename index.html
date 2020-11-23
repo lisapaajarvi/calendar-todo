@@ -6,17 +6,21 @@
     <title>Lisas kalender</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Texturina:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5fe505aff9.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="./calendar.js"></script>    
     <script src="./todo.js"></script>
     <script src="./main.js"></script>
 </head>
 <body>
     <header>
-        <h1>🐹The Fluffy Guinea Pig Calendar🐹</h1>
+        <h1>The Fluffy Guinea Pig Calendar</h1>
 
     </header>
-    <aside class="flex column center">
+    <aside class="flex column">
         <div class="today">
 
             <div class="weekday" id="weekday-holder">
@@ -43,7 +47,7 @@
                     <!--Code injected by Javascript-->  
             </div>
         </div>
-        
+
         <div class="todo">
             <h2>Att göra:</h2>
             <ul class="todo-container" id="todo-container">
@@ -59,8 +63,22 @@
     </aside>
 
     <main>
-        <div id="calendar">
-            <!--Code injected by Javascript-->
+        <div class="calendar-header flex">
+            <i class="fas fa-arrow-circle-left fa-3x" id="previous-month-icon"></i>
+            <h2 id="current-month"><!--code injected from javascript --></h2>
+            <i class="fas fa-arrow-circle-right fa-3x" id="next-month-icon"></i>
+        </div>
+        <div class="weekdays">
+            <p>Måndag</p>
+            <p>Tisdag</p>
+            <p>Onsdag</p>
+            <p>Torsdag</p>
+            <p>Fredag</p>
+            <p>Lördag</p>
+            <p>Söndag</p>
+        </div>
+        <div id="calendar-container">
+            <!--code injected from javascript-->
         </div>
     </main>
 </body>

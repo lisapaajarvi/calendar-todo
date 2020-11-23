@@ -1,17 +1,26 @@
 window.addEventListener("load", main)
 
 const date = new Date ();
-let month = "";
+//let currentMonth = "";
+
+
 
 function main() {
     addEventListeners();
     showClock();   
     renderTodos();
+    renderCalendar();
 }
 
 function addEventListeners() {
     const submitButton = document.getElementById("submit-button")
     submitButton.onclick = addNewTodo;
+
+    const previousMonthIcon = document.getElementById("previous-month-icon");
+    previousMonthIcon.addEventListener("click", showPreviousMonth);
+
+    const nextMonthIcon = document.getElementById("next-month-icon");
+    nextMonthIcon.addEventListener("click", showNextMonth);
 }
 
 function showClock() {
