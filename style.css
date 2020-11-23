@@ -2,10 +2,10 @@ body {
     margin: 0;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
     grid-template-areas: 
-    "header header"
+    "aside header"
     "aside main";
 }
 header {
@@ -21,10 +21,35 @@ aside {
 }
 
 .today {
+    
     color: green;
+    font-family: 'Staatliches', cursive;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "time guineapig1"
+    "weekday date"
+    "guineapig2 month";
 }
-#clock-display {
+
+.today>p {
+    margin: 0.1rem;
+    padding: 0;
+}
+#clock {
+    font-size: 6rem;
+}
+
+#weekday-holder {
     font-size: 4rem;
+}
+#date-holder {
+    font-size: 10rem;
+}
+#month-holder {
+    font-size: 3rem;
 }
 
 /* REUSABLE CLASSES */
