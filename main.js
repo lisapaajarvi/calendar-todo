@@ -47,30 +47,30 @@ function formatTime (counter) {
 function getWeekday(date) {
     const weekdayIndex = date.getDay();
     switch(weekdayIndex) {
-        case 0: return "Sönday";
-        case 1: return "Måndag";
-        case 2: return "Tisdag";
-        case 3: return "Onsdag";
-        case 4: return "Torsdag";
-        case 5: return "Fredag";
-        case 6: return "Lördag";
+        case 0: return "Sön";
+        case 1: return "Mån";
+        case 2: return "Tis";
+        case 3: return "Ons";
+        case 4: return "Tor";
+        case 5: return "Fre";
+        case 6: return "Lör";
     }
 }
 
 function getMonth (date) {
     const monthIndex = date.getMonth();
     switch(monthIndex) {
-        case 0: return "januari";
-        case 1: return "februari";
-        case 2: return "mars";
-        case 3: return "april";
+        case 0: return "jan";
+        case 1: return "feb";
+        case 2: return "mar";
+        case 3: return "apr";
         case 4: return "maj";
-        case 5: return "juni";    
-        case 6: return "juli";
-        case 7: return "augusti";
-        case 8: return "september";
-        case 9: return "oktober";
-        case 10: return "november";
-        case 11: return "december";
+        case 5: return "jun";    
+        case 6: return "jul";
+        case 7: return "aug";
+        case 8: return "sep";
+        case 9: return "okt";
+        case 10: return "nov";
+        case 11: return "dec";
     }
 }

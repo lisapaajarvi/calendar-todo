@@ -32,24 +32,37 @@ aside {
     "time guineapig1"
     "weekday date"
     "guineapig2 month";
+    justify-content: center;
+    background-color: lightgray;
+    border-radius: 3rem;
+    padding: 2rem;
+    margin-top: 2rem;
 }
 
-.today>p {
+.guinea-pig {
+    width: 5rem;
+    border-radius: 10rem;
+}
+.today>div {
     margin: 0.1rem;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 #clock {
-    font-size: 6rem;
+    font-size: 4rem;
 }
 
 #weekday-holder {
     font-size: 4rem;
 }
 #date-holder {
-    font-size: 10rem;
+    font-size: 4rem;
 }
 #month-holder {
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 /* REUSABLE CLASSES */
