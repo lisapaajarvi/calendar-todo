@@ -20,14 +20,12 @@ function updateClock(){
 
     let hours = date.getHours();
     let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
 
     hours = formatTime(hours);
     minutes = formatTime(minutes);
-    seconds = formatTime(seconds);
 
-    const clockDiv = document.getElementById("clock-div");
-    clockDiv.innerText = hours + ":" + minutes + ":" + seconds;
+    const clockDiv = document.getElementById("clock-display");
+    clockDiv.innerText = hours + ":" + minutes;
 }
 
 function formatTime (counter) {

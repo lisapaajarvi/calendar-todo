@@ -12,12 +12,22 @@ header {
     grid-area: header;
     display: flex;
     justify-content: center;
+    padding: 2rem;
 
 }
 
 aside {
     grid-area: aside;
 }
+
+.today {
+    color: green;
+}
+#clock-display {
+    font-size: 4rem;
+}
+
+/* REUSABLE CLASSES */
 
 .flex {
     display: flex;
