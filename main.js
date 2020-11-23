@@ -4,11 +4,15 @@ const date = new Date ();
 let month = "";
 
 function main() {
+    addEventListeners();
     showClock();   
-    //addEventListeners();
+    renderTodos();
 }
 
-//addEventListeners() {}
+function addEventListeners() {
+    const submitButton = document.getElementById("submit-button")
+    submitButton.onclick = addNewTodo;
+}
 
 function showClock() {
     updateClock();

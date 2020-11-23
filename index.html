@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <script src="./todo.js"></script>
     <script src="./main.js"></script>
 </head>
 <body>
@@ -41,13 +42,19 @@
             <div class="time" id="clock">
                     <!--Code injected by Javascript-->  
             </div>
-
-    
-
         </div>
-        <h2>Att göra:</h2>
-        <div id="todo-list">
-            <!--Code injected by Javascript-->
+        
+        <div class="todo">
+            <h2>Att göra:</h2>
+            <ul class="todo-container" id="todo-container">
+                <!--Code injected by Javascript-->
+            </ul>
+                
+            <input type="date" name="date" id="date-input">
+    
+            <input type="text" id="todo-input" placeholder="Att göra...">
+    
+            <button type="submit" id="submit-button">Lägg till</button>
         </div>
     </aside>
 
