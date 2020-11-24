@@ -34,7 +34,7 @@ function showNextMonth() {
 /** fetches an array of the days of the current month from the API */
 function fetchDays() {
     $.ajax({
-        url: `http://sholiday.faboul.se/dagar/v2.1/${year}/${month}`,
+        url: `https://sholiday.faboul.se/dagar/v2.1/${year}/${month}`,
         type: "GET",
         dataType: "jsonp",
         success: function(response) {
@@ -78,7 +78,6 @@ function createDayDivs(days) {
         const dayDiv = document.createElement("div")
 
         let calendarTodos = getTodos (day.datum);
-        //ATT FIXA: hämta todos för det aktuella datumet
         if (day.helgdag !== undefined) {
             dayDiv.innerHTML = day.datum.split("-")[2] + " " + day.helgdag;
             dayDiv.style.color = "red";
