@@ -24,5 +24,6 @@ function addNewTodo() {
     let newTodo = {title: todoTitle, date: todoDate};
 
     todoList.push(newTodo);
-    renderTodos();    
+    renderTodos(); 
+    renderCalendar();   
 }

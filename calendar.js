@@ -76,6 +76,8 @@ function createDayDivs(days) {
 
     for (const day of days) {
         const dayDiv = document.createElement("div")
+
+        let calendarTodos = getTodos (day.datum);
         //ATT FIXA: hämta todos för det aktuella datumet
         if (day.helgdag !== undefined) {
             dayDiv.innerHTML = day.datum.split("-")[2] + " " + day.helgdag;
@@ -84,6 +86,13 @@ function createDayDivs(days) {
         else {
             dayDiv.innerHTML = day.datum.split("-")[2];
         }
+       if (calendarTodos.length > 0) {
+            for ( let i=0; i<calendarTodos.length; i++ ) {
+                let calendarTodoContainer = document.createElement("p")
+                calendarTodoContainer.innerHTML = calendarTodos[i]
+                dayDiv.appendChild(calendarTodoContainer);
+            }
+       }    
         dayDivs.push(dayDiv); 
     }
     return dayDivs;
@@ -118,4 +127,16 @@ function getMonthName(month) {
         case 11: return "November";
         case 12: return "December";       
     }
+}
+
+
+function getTodos(date) {
+    calendarTodos = [];
+    for (const todoItem of todoList) {
+        if (todoItem.date === date) {
+            calendarTodos.push(todoItem.title)
+        }
+    }   
+    console.log(calendarTodos)
+    return calendarTodos;
 }
