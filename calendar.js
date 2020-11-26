@@ -1,5 +1,3 @@
-let year = 2020;
-let month = 11;
 
 /** renders the calendar on the page */
 function renderCalendar() {
@@ -62,7 +60,7 @@ function renderDays(daysInAMonth) {
 /** 
  * creates an array of divs of the days of the month 
  * containing the date and the name of the holiday if it is a holiday,
- * also adds empty divs if the month doesn't start on a monday
+ * adds the todos for each day, and also adds empty divs if the month doesn't start on a monday
  */
 function createDayDivs(days) { 
     const dayDivs = [];  
@@ -76,6 +74,7 @@ function createDayDivs(days) {
 
     for (const day of days) {
         const dayDiv = document.createElement("div")
+        dayDiv.classList.add("day-div");
 
         let calendarTodos = getTodos (day.datum);
         if (day.helgdag !== undefined) {
@@ -88,6 +87,7 @@ function createDayDivs(days) {
        if (calendarTodos.length > 0) {
             for ( let i=0; i<calendarTodos.length; i++ ) {
                 let calendarTodoContainer = document.createElement("p")
+                calendarTodoContainer.id = day.datum;
                 calendarTodoContainer.innerHTML = calendarTodos[i]
                 dayDiv.appendChild(calendarTodoContainer);
             }
@@ -128,6 +128,7 @@ function getMonthName(month) {
     }
 }
 
+/**  Loops through the todo list and returns those that match a certain date */
 
 function getTodos(date) {
     calendarTodos = [];
@@ -136,6 +137,5 @@ function getTodos(date) {
             calendarTodos.push(todoItem.title)
         }
     }   
-    console.log(calendarTodos)
     return calendarTodos;
 }

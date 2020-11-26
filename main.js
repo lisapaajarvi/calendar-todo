@@ -1,7 +1,8 @@
 window.addEventListener("load", main)
 
 const date = new Date ();
-//let currentMonth = "";
+let year = date.getFullYear();
+let month = date.getMonth() + 1;
 
 
 
