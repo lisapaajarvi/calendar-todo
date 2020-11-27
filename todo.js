@@ -1,14 +1,4 @@
 let todoList = [];
-/*[{
-    title: "Nils fyller år",
-    date: "2020-11-25"
-}, {
-    title: "Handla",
-    date: "2020-11-28"
-}]*/
-
-//JSON.parse(window.localStorage.getItem("savedTodos"))
-
 
 function renderTodos() {
     const todoContainer = document.getElementById("todo-container");
@@ -17,11 +7,7 @@ function renderTodos() {
     for(const todo of todoList) {
         const listItem = document.createElement("li");
         listItem.innerHTML = todo.date + ": " + todo.title + " " + '<i class="fas fa-trash-alt trash"></i>';
-        listItem.addEventListener('click', function(){
-            todoList.splice(todoList.indexOf(todo),1)
-            listItem.remove();
-            renderCalendar();
-        })       
+        addListItemEventListener(listItem, todo);    
         todoContainer.append(listItem);
     }
 }
@@ -31,12 +17,11 @@ function addNewTodo() {
     const todoDate = document.getElementById("date-input").value;
 
     let newTodo = {title: todoTitle, date: todoDate};
-
     todoList.push(newTodo);
-    window.localStorage.setItem("savedTodos", JSON.stringify(todoList))
+
+    saveTodosInLocalStorage()
     renderTodos(); 
     renderCalendar();   
-    console.log(JSON.parse(window.localStorage.getItem("savedTodos")))
 }
 
 function getTodosFromLocalStorage() {
@@ -46,3 +31,15 @@ function getTodosFromLocalStorage() {
     }
 }
 
+function saveTodosInLocalStorage() {
+    window.localStorage.setItem("savedTodos", JSON.stringify(todoList));
+}
+
+function addListItemEventListener(listItem, todo) {
+    listItem.addEventListener('click', function(){
+        todoList.splice(todoList.indexOf(todo), 1 )
+        listItem.remove();
+        saveTodosInLocalStorage();
+        renderCalendar();
+    })    
+}
