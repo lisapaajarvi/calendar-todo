@@ -1,10 +1,14 @@
-const todoList = [{
+const todoList = 
+[{
     title: "Nils fyller år",
     date: "2020-11-25"
 }, {
     title: "Handla",
     date: "2020-11-28"
 }]
+
+//JSON.parse(window.localStorage.getItem("savedTodos"))
+
 
 function renderTodos() {
     const todoContainer = document.getElementById("todo-container");
@@ -29,6 +33,8 @@ function addNewTodo() {
     let newTodo = {title: todoTitle, date: todoDate};
 
     todoList.push(newTodo);
+    window.localStorage.setItem("savedTodos", JSON.stringify(todoList))
     renderTodos(); 
     renderCalendar();   
+    console.log(JSON.parse(window.localStorage.getItem("savedTodos")))
 }
