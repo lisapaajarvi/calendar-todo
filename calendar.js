@@ -76,7 +76,6 @@ function createDayDivs(days) {
         const dayDiv = document.createElement("div")
         dayDiv.classList.add("day-div");
 
-        let calendarTodos = getTodos (day.datum);
         if (day.helgdag !== undefined) {
             dayDiv.innerHTML = day.datum.split("-")[2] + " " + day.helgdag;
             dayDiv.style.color = "red";
@@ -84,14 +83,16 @@ function createDayDivs(days) {
         else {
             dayDiv.innerHTML = day.datum.split("-")[2];
         }
-       if (calendarTodos.length > 0) {
-            for ( let i=0; i<calendarTodos.length; i++ ) {
-                let calendarTodoContainer = document.createElement("p")
-                calendarTodoContainer.id = day.datum;
-                calendarTodoContainer.innerHTML = calendarTodos[i]
-                dayDiv.appendChild(calendarTodoContainer);
-            }
-       }    
+        let calendarTodos = getTodos (day.datum);
+        if (calendarTodos.length > 0) {
+            let calendarTodoContainer = document.createElement("p")
+            calendarTodoContainer.id = day.datum;
+            calendarTodoContainer.innerHTML = calendarTodos.length;
+            calendarTodoContainer.addEventListener("click", function() {
+                calendarTodoContainer.style.backgroundColor = "green";
+            })
+            dayDiv.appendChild(calendarTodoContainer);
+        }    
         dayDivs.push(dayDiv); 
     }
     return dayDivs;
