@@ -1,11 +1,11 @@
-const todoList = 
-[{
+let todoList = [];
+/*[{
     title: "Nils fyller år",
     date: "2020-11-25"
 }, {
     title: "Handla",
     date: "2020-11-28"
-}]
+}]*/
 
 //JSON.parse(window.localStorage.getItem("savedTodos"))
 
@@ -38,3 +38,11 @@ function addNewTodo() {
     renderCalendar();   
     console.log(JSON.parse(window.localStorage.getItem("savedTodos")))
 }
+
+function getTodosFromLocalStorage() {
+    let savedTodos = JSON.parse(window.localStorage.getItem("savedTodos"));
+    if (savedTodos !== null) {
+        todoList = savedTodos;
+    }
+}
+

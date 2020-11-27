@@ -8,6 +8,7 @@ let month = date.getMonth() + 1;
 
 function main() {
     addEventListeners();
+    getTodosFromLocalStorage()
     showClock();   
     renderTodos();
     renderCalendar();
