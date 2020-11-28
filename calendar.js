@@ -66,11 +66,11 @@ function createDayDivs(days) {
     const dayDivs = [];  
     const weekdayIndex = getWeekdayIndex(days[0].veckodag)
 
-        for ( let i=0; i<weekdayIndex; i++ ) {
-            const emptyDiv = document.createElement("div")
-            emptyDiv.innerHTML = "";
-            dayDivs.push(emptyDiv);
-        }
+    for ( let i=0; i<weekdayIndex; i++ ) {
+        const emptyDiv = document.createElement("div")
+        emptyDiv.innerHTML = "";
+        dayDivs.push(emptyDiv);
+    }
 
     for (const day of days) {
         const dayDiv = document.createElement("div")
@@ -89,14 +89,18 @@ function createDayDivs(days) {
             calendarTodoContainer.id = day.datum;
             calendarTodoContainer.innerHTML = calendarTodos.length;
             calendarTodoContainer.addEventListener("click", function(event) {
-                calendarTodoContainer.style.backgroundColor = "green";
                 const activeDate = document.getElementById("active-date-container")
                 activeDate.innerHTML = "Att göra " + day.datum.split("-")[2] + "/" + month + ":";
                 const activeTodos = document.getElementById("active-todos-container")
-                activeTodos.innerHTML = calendarTodos;
+                activeTodos.innerHTML = "";
+                for(const todo of calendarTodos) {
+                    const listItem = document.createElement("li");
+                    listItem.innerHTML = todo.title + " " + '<i class="fas fa-trash-alt trash"></i>';   
+                    addListItemEventListener(listItem, todo);  
+                    activeTodos.appendChild(listItem);
+                }
                 const activeDay = document.getElementById("active-day")
                 activeDay.style.left = "40%";
-                console.log(event);
             })
             dayDiv.appendChild(calendarTodoContainer);
         }    
@@ -142,7 +146,7 @@ function getTodos(date) {
     calendarTodos = [];
     for (const todoItem of todoList) {
         if (todoItem.date === date) {
-            calendarTodos.push(todoItem.title)
+            calendarTodos.push(todoItem)
         }
     }   
     return calendarTodos;

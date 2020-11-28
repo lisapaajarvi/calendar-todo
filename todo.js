@@ -40,6 +40,7 @@ function addListItemEventListener(listItem, todo) {
         todoList.splice(todoList.indexOf(todo), 1 )
         listItem.remove();
         saveTodosInLocalStorage();
+        renderTodos();
         renderCalendar();
     })    
 }
