@@ -23,6 +23,9 @@ function addEventListeners() {
 
     const nextMonthIcon = document.getElementById("next-month-icon");
     nextMonthIcon.addEventListener("click", showNextMonth);
+
+    const closeActiveDayIcon = document.getElementById("close-active-day-icon");
+    closeActiveDayIcon.addEventListener("click", closeActiveDay);
 }
 
 function showClock() {

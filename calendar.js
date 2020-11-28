@@ -94,6 +94,8 @@ function createDayDivs(days) {
                 activeDate.innerHTML = "Att göra " + day.datum.split("-")[2] + "/" + month + ":";
                 const activeTodos = document.getElementById("active-todos-container")
                 activeTodos.innerHTML = calendarTodos;
+                const activeDay = document.getElementById("active-day")
+                activeDay.style.left = "40%";
                 console.log(event);
             })
             dayDiv.appendChild(calendarTodoContainer);
@@ -144,4 +146,9 @@ function getTodos(date) {
         }
     }   
     return calendarTodos;
+}
+
+function closeActiveDay() {
+    const activeDay = document.getElementById("active-day")
+    activeDay.style.left = "100rem";
 }
