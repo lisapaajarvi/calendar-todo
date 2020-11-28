@@ -88,8 +88,13 @@ function createDayDivs(days) {
             let calendarTodoContainer = document.createElement("p")
             calendarTodoContainer.id = day.datum;
             calendarTodoContainer.innerHTML = calendarTodos.length;
-            calendarTodoContainer.addEventListener("click", function() {
+            calendarTodoContainer.addEventListener("click", function(event) {
                 calendarTodoContainer.style.backgroundColor = "green";
+                const activeDate = document.getElementById("active-date-container")
+                activeDate.innerHTML = "Att göra " + day.datum.split("-")[2] + "/" + month + ":";
+                const activeTodos = document.getElementById("active-todos-container")
+                activeTodos.innerHTML = calendarTodos;
+                console.log(event);
             })
             dayDiv.appendChild(calendarTodoContainer);
         }    
