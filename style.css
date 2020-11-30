@@ -141,6 +141,9 @@ aside {
 .close-icon {
     float: right;
 }
+.trash {
+    cursor: pointer;
+}
 
 
 /* REUSABLE CLASSES */
