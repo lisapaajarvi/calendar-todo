@@ -96,7 +96,7 @@ function createDayDivs(days) {
                 activeTodos.innerHTML = "";
                 for(const todo of calendarTodos) {
                     const listItem = document.createElement("li");
-                    listItem.innerHTML = todo.title + " " + '<i class="fas fa-trash-alt trash"></i>';   
+                    listItem.innerHTML = todo.title + " " + '  <i class="fas fa-trash-alt trash"></i>';   
                     addListItemEventListener(listItem, todo);  
                     activeTodos.appendChild(listItem);
                 }

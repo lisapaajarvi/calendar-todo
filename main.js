@@ -18,6 +18,9 @@ function addEventListeners() {
     const submitButton = document.getElementById("submit-button")
     submitButton.onclick = addNewTodo;
 
+   // const submitButton2 = document.getElementById("submit-button-2")
+   // submitButton2.onclick = console.log(e.target.id)
+
     const previousMonthIcon = document.getElementById("previous-month-icon");
     previousMonthIcon.addEventListener("click", showPreviousMonth);
 

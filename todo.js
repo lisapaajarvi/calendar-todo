@@ -24,6 +24,19 @@ function addNewTodo() {
     renderCalendar();   
 }
 
+
+/*function addTodoSameDate() {
+    const todoTitle = document.getElementById("todo-input-2").value;
+    const todoDate = 
+
+    let newTodo = {title: todoTitle, date: todoDate};
+    todoList.push(newTodo);
+
+    saveTodosInLocalStorage()
+    renderTodos(); 
+    renderCalendar();   
+} 
+*/
 function getTodosFromLocalStorage() {
     let savedTodos = JSON.parse(window.localStorage.getItem("savedTodos"));
     if (savedTodos !== null) {
